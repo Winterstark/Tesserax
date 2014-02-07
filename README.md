@@ -62,6 +62,7 @@ The buttons above the thumbnail are, from left to right:
 * Star all (all images in current directory)
 * Star none
 * Switch to Comic book mode
+* About Tesserax
 
 The buttons on the left side are, from bottom to top:
 * Copy image
@@ -112,4 +113,4 @@ Credits
 * Uses [ImageFast](http://weblogs.asp.net/justin_rogers/articles/131704.aspx) library to speed up image loading
 * Tesseract icon from [Wikimedia Commons](http://commons.wikimedia.org/wiki/File:Hypercube.png)
 * UI icons by [Adam Whitcroft](http://adamwhitcroft.com/batch/) and [Modern UI Icons](http://modernuiicons.com/)
-* Uploading animation by [Load Info](www.loadinfo.net)
+* Uploading animation by [Load Info](http://www.loadinfo.net)

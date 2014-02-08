@@ -114,8 +114,6 @@ You cannot move the page sideways, only up or down: either by scrolling the mous
 
 If you scroll to the edge of the page a slight delay will happen before the actual page turns. This gives you a little hint to know you've reached the end of the page.
 
-![Screenshot: displaying a gif](http://i.imgur.com/iSE7Hwi.gif)
-
 
 Credits
 ---------
@@ -126,3 +124,6 @@ Credits
 * Tesseract icon from [Wikimedia Commons](http://commons.wikimedia.org/wiki/File:Hypercube.png)
 * UI icons by [Adam Whitcroft](http://adamwhitcroft.com/batch/) and [Modern UI Icons](http://modernuiicons.com/)
 * Uploading animation by [Load Info](http://www.loadinfo.net)
+
+
+![Screenshot: displaying a gif](http://i.imgur.com/iSE7Hwi.gif)

@@ -15,7 +15,7 @@ using Microsoft.WindowsAPICodePack.Shell;
 using System.Diagnostics;
 using System.Collections.Specialized;
 using System.Runtime.InteropServices;
-
+using GenericForms;
 
 namespace Tesserax
 {
@@ -288,6 +288,7 @@ namespace Tesserax
 
         #region Global Declarations
         Upload uploadForm;
+        formAbout aboutTesserax;
 
         BackgroundWorker imgLoader, thumbLoader;
         UIButton[] buttons;
@@ -1678,6 +1679,15 @@ namespace Tesserax
             comicPageScrolls = 0;
             comicMode = true;
         }
+
+        void about()
+        {
+            if (aboutTesserax == null || aboutTesserax.IsDisposed)
+            {
+                aboutTesserax = new formAbout();
+                aboutTesserax.Show();
+            }
+        }
         #endregion
 
         #region SideButton Events
@@ -2216,7 +2226,7 @@ namespace Tesserax
             thumbStripBrush = new SolidBrush(Color.FromArgb(38, 39, 37));
 
             //init UI buttons
-            buttons = new UIButton[14];
+            buttons = new UIButton[15];
             int i = 0;
 
             buttons[i++] = new UIButton("Tesserax Mode", genButton("tesserax"), -264, tesserax);
@@ -2233,6 +2243,7 @@ namespace Tesserax
             buttons[i++] = new UIButton("Star All", genButton("star all"), 198, starAll);
             buttons[i++] = new UIButton("Star None", genButton("star none"), 234, starNone);
             buttons[i++] = new UIButton("Comic Book Mode", genButton("comicbook"), 284, comicbook);
+            buttons[i++] = new UIButton("About Tesserax", genButton("about"), 334, about);
 
             sideButtons = new ActionButton[8];
             i = 0;
@@ -2252,6 +2263,9 @@ namespace Tesserax
             imgLoader.RunWorkerCompleted += new RunWorkerCompletedEventHandler(imgLoader_RunWorkerCompleted);
 
             assignThumbAndGifLoaders();
+
+            //check for updates
+            Updater.Update(VERSION, "https://raw2.github.com/Winterstark/Tesserax/master/update/update.txt", new bool[3] { false, true, false }, true);
         }
 
         private void Main_Activated(object sender, EventArgs e)

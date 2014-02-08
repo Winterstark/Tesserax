@@ -8,6 +8,8 @@ Tesserax is an image viewer for Windows, designed as an improved version of Goog
 * Tesserax mode - displaying the image contents of a directory in the form of a densely packed mosaic
 * Comic book mode
 
+![Screenshot: Tesserax](http://i.imgur.com/nZMBBBH.png)
+
 
 Installation
 --------------
@@ -42,6 +44,8 @@ To switch between files use:
 * You can also click on a thumnbail to jump to it.
 * Move the cursor over the thumbnail strip and scroll with the mouse wheel
 
+![Screenshot: thumbnail strip](http://i.imgur.com/nnvXdoV.gif)
+
 Other controls:
 * Click outside the image area (or double-click anywhere) to exit fullscreen.
 * Click the button in the top-right corner (or double-click anywhere) to return to fullscreen.
@@ -74,6 +78,8 @@ The buttons on the left side are, from bottom to top:
 * Search Karma Decay (Reddit) with image
 * Post image to Reddit
 
+![Screenshot: upload form](http://i.imgur.com/q5mCU6R.png)
+
 Note that these buttons perform their operations on the currently viewed image *or*, if there are any starred images, on *all* of them instead. This makes it easy to upload an album of several images at once.
  
 ### Starring Images
@@ -81,6 +87,8 @@ Note that these buttons perform their operations on the currently viewed image *
 By starring images you can take a selection of images from the current directory and perform an operation (the left-side buttons) on all of them at once. To star the currently viewed image click the Star button or press S.
 
 You can also use the buttons to star all (or unstar all) images in the directory.
+
+![Screenshot: list of starred images](http://i.imgur.com/oiUVeZ7.png)
 
 Starred images are displayed in a list on the left side of the screen. You can click on them in the list to unstar them.
 
@@ -94,6 +102,8 @@ To move the mosaic left or right scroll with the mouse wheel or press the left/r
 
 Click on a thumbnail to view its image in full size. Ctrl+Click a thumbnail to star it.
 
+![Screenshot: Tesserax mode](http://i.imgur.com/d4jm9oM.jpg)
+
 Note: when you enter Tesserax mode with a large directory you might see the thumbnails quickly scrolling past each other - this means the thumnails are still loading.
 
 ### Comic Book Mode
@@ -103,6 +113,8 @@ This feature is useful when you have a comic book where every page is a separate
 You cannot move the page sideways, only up or down: either by scrolling the mouse wheel, clicking and dragging, or with the up and down arrow keys. The left and right keys move to the previous/next page.
 
 If you scroll to the edge of the page a slight delay will happen before the actual page turns. This gives you a little hint to know you've reached the end of the page.
+
+![Screenshot: displaying a gif](http://i.imgur.com/iSE7Hwi.gif)
 
 
 Credits

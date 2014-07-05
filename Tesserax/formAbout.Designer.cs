@@ -93,7 +93,7 @@
             this.linkLabel2.Location = new System.Drawing.Point(230, 116);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(187, 25);
-            this.linkLabel2.TabIndex = 1;
+            this.linkLabel2.TabIndex = 2;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Developed by Winterstark";
             this.linkLabel2.UseCompatibleTextRendering = true;
@@ -107,7 +107,7 @@
             this.linkLabel3.Location = new System.Drawing.Point(119, 217);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(93, 21);
-            this.linkLabel3.TabIndex = 1;
+            this.linkLabel3.TabIndex = 4;
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "Uses Imgur API";
             this.linkLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -122,7 +122,7 @@
             this.linkLabel4.Location = new System.Drawing.Point(116, 238);
             this.linkLabel4.Name = "linkLabel4";
             this.linkLabel4.Size = new System.Drawing.Size(96, 21);
-            this.linkLabel4.TabIndex = 1;
+            this.linkLabel4.TabIndex = 5;
             this.linkLabel4.TabStop = true;
             this.linkLabel4.Text = "Uses ImageFast";
             this.linkLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -137,7 +137,7 @@
             this.linkLabel5.Location = new System.Drawing.Point(26, 259);
             this.linkLabel5.Name = "linkLabel5";
             this.linkLabel5.Size = new System.Drawing.Size(186, 21);
-            this.linkLabel5.TabIndex = 1;
+            this.linkLabel5.TabIndex = 6;
             this.linkLabel5.TabStop = true;
             this.linkLabel5.Text = "Icon from Wikimedia Commons";
             this.linkLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -152,7 +152,7 @@
             this.linkLabel6.Location = new System.Drawing.Point(48, 280);
             this.linkLabel6.Name = "linkLabel6";
             this.linkLabel6.Size = new System.Drawing.Size(164, 21);
-            this.linkLabel6.TabIndex = 1;
+            this.linkLabel6.TabIndex = 7;
             this.linkLabel6.TabStop = true;
             this.linkLabel6.Text = "UI icons by Adam Whitcroft";
             this.linkLabel6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -167,7 +167,7 @@
             this.linkLabel7.Location = new System.Drawing.Point(86, 301);
             this.linkLabel7.Name = "linkLabel7";
             this.linkLabel7.Size = new System.Drawing.Size(126, 21);
-            this.linkLabel7.TabIndex = 1;
+            this.linkLabel7.TabIndex = 8;
             this.linkLabel7.TabStop = true;
             this.linkLabel7.Text = "and Modern UI Icons";
             this.linkLabel7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -182,7 +182,7 @@
             this.linkLabel8.Location = new System.Drawing.Point(230, 220);
             this.linkLabel8.Name = "linkLabel8";
             this.linkLabel8.Size = new System.Drawing.Size(187, 84);
-            this.linkLabel8.TabIndex = 15;
+            this.linkLabel8.TabIndex = 3;
             this.linkLabel8.TabStop = true;
             this.linkLabel8.Text = "Send any comments, requests, or bug reports to winterstark@gmail.com\r\nThanks!";
             this.linkLabel8.UseCompatibleTextRendering = true;
@@ -196,7 +196,7 @@
             this.linkLabel9.Location = new System.Drawing.Point(11, 322);
             this.linkLabel9.Name = "linkLabel9";
             this.linkLabel9.Size = new System.Drawing.Size(201, 21);
-            this.linkLabel9.TabIndex = 1;
+            this.linkLabel9.TabIndex = 9;
             this.linkLabel9.TabStop = true;
             this.linkLabel9.Text = "Uploading animation by Load Info";
             this.linkLabel9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

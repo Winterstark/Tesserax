@@ -52,7 +52,7 @@
             this.txtTitle.Location = new System.Drawing.Point(73, 39);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(157, 20);
-            this.txtTitle.TabIndex = 1;
+            this.txtTitle.TabIndex = 2;
             this.txtTitle.TextChanged += new System.EventHandler(this.txtTitle_TextChanged);
             // 
             // lblDesc
@@ -70,7 +70,7 @@
             this.txtDesc.Multiline = true;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(218, 94);
-            this.txtDesc.TabIndex = 1;
+            this.txtDesc.TabIndex = 3;
             this.txtDesc.TextChanged += new System.EventHandler(this.txtDesc_TextChanged);
             // 
             // bttUpload
@@ -78,7 +78,7 @@
             this.bttUpload.Location = new System.Drawing.Point(236, 12);
             this.bttUpload.Name = "bttUpload";
             this.bttUpload.Size = new System.Drawing.Size(116, 47);
-            this.bttUpload.TabIndex = 2;
+            this.bttUpload.TabIndex = 4;
             this.bttUpload.Text = "Upload";
             this.bttUpload.UseVisualStyleBackColor = true;
             this.bttUpload.Click += new System.EventHandler(this.bttUpload_Click);
@@ -101,7 +101,7 @@
             this.cmbImgs.Location = new System.Drawing.Point(12, 12);
             this.cmbImgs.Name = "cmbImgs";
             this.cmbImgs.Size = new System.Drawing.Size(218, 21);
-            this.cmbImgs.TabIndex = 4;
+            this.cmbImgs.TabIndex = 1;
             this.cmbImgs.SelectedIndexChanged += new System.EventHandler(this.cmbImgs_SelectedIndexChanged);
             // 
             // Upload

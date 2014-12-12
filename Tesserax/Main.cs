@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Drawing.Imaging;
-using System.Drawing.Drawing2D;
 using System.Threading;
-using Microsoft.WindowsAPICodePack.Shell;
 using System.Diagnostics;
-using System.Collections.Specialized;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
+using Microsoft.WindowsAPICodePack.Shell;
 using GenericForms;
 
 namespace Tesserax
@@ -22,6 +22,7 @@ namespace Tesserax
     public partial class Main : Form
     {
         const double VERSION = 1.0;
+        const string UPDATE_URL = "https://raw2.github.com/Winterstark/Tesserax/master/update/update.txt";
 
         //enums
         enum Align { Center, Relative, HoldPosition, Custom }
@@ -1685,6 +1686,7 @@ namespace Tesserax
             if (aboutTesserax == null || aboutTesserax.IsDisposed)
             {
                 aboutTesserax = new formAbout();
+                aboutTesserax.DefaultUpdateURL = UPDATE_URL;
                 aboutTesserax.Show();
             }
         }
@@ -2265,7 +2267,7 @@ namespace Tesserax
             assignThumbAndGifLoaders();
 
             //check for updates
-            Updater.Update(VERSION, "https://raw2.github.com/Winterstark/Tesserax/master/update/update.txt", new bool[3] { false, true, false }, true);
+            Updater.Update(VERSION, UPDATE_URL);
         }
 
         private void Main_Activated(object sender, EventArgs e)
@@ -2811,7 +2813,7 @@ namespace Tesserax
                     if (tessMode && !tessImgFocus)
                         tessModeScroll(-256 * (e.Control ? 10 : 1));
                     else if (comicMode)
-                        getNextFile(-1);
+                        getNextFile(1);
                     else
                         getNextFile(1 * (e.Control ? 10 : 1));
                     break;

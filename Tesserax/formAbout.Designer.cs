@@ -41,6 +41,7 @@
             this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.linkLabel8 = new System.Windows.Forms.LinkLabel();
             this.linkLabel9 = new System.Windows.Forms.LinkLabel();
+            this.buttUpdateOptions = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -203,11 +204,22 @@
             this.linkLabel9.UseCompatibleTextRendering = true;
             this.linkLabel9.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel9_LinkClicked);
             // 
+            // buttUpdateOptions
+            // 
+            this.buttUpdateOptions.Location = new System.Drawing.Point(230, 301);
+            this.buttUpdateOptions.Name = "buttUpdateOptions";
+            this.buttUpdateOptions.Size = new System.Drawing.Size(187, 30);
+            this.buttUpdateOptions.TabIndex = 10;
+            this.buttUpdateOptions.Text = "Update Options";
+            this.buttUpdateOptions.UseVisualStyleBackColor = true;
+            this.buttUpdateOptions.Click += new System.EventHandler(this.buttUpdateOptions_Click);
+            // 
             // formAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(486, 356);
+            this.Controls.Add(this.buttUpdateOptions);
             this.Controls.Add(this.linkLabel8);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.linkLabel9);
@@ -246,5 +258,6 @@
         private System.Windows.Forms.LinkLabel linkLabel8;
         public System.Windows.Forms.Label lblVersion;
         private System.Windows.Forms.LinkLabel linkLabel9;
+        private System.Windows.Forms.Button buttUpdateOptions;
     }
 }

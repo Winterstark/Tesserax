@@ -8,11 +8,17 @@ using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
+using GenericForms;
 
 namespace Tesserax
 {
     public partial class formAbout : Form
     {
+        public string DefaultUpdateURL = "";
+
+        UpdateConfig updateConfig;
+
+
         public formAbout()
         {
             InitializeComponent();
@@ -70,6 +76,16 @@ namespace Tesserax
         private void linkLabel9_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("http://www.loadinfo.net");
+        }
+
+        private void buttUpdateOptions_Click(object sender, EventArgs e)
+        {
+            if (updateConfig == null || updateConfig.IsDisposed)
+            {
+                updateConfig = new UpdateConfig();
+                updateConfig.DefaultUpdateURL = DefaultUpdateURL;
+                updateConfig.Show();
+            }
         }
     }
 }

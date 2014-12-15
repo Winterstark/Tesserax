@@ -1,1 +1,8 @@
-no update
+[UPDATE]
+[VERSION]1.01[/VERSION]
+[FILE]https://raw.githubusercontent.com/Winterstark/Tesserax/master/update/update files/Tesserax.exe->root\Tesserax.exe[/FILE]
+[FILE]https://raw.githubusercontent.com/Winterstark/Tesserax/master/update/update files/GenericForms.dll->root\GenericForms.dll[/FILE]
+[FILE]https://raw.githubusercontent.com/Winterstark/Tesserax/master/update/update files/README.md->root\README.md[/FILE]
+[CHANGELOG]* fixed updater issues
+* the user can now choose which Imgur page opens after uploading images, and in what format will the image links be copied into the clipboard[/CHANGELOG]
+[/UPDATE]

@@ -35,6 +35,10 @@
             this.bttUpload = new System.Windows.Forms.Button();
             this.picSpinner = new System.Windows.Forms.PictureBox();
             this.cmbImgs = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbOpenLink = new System.Windows.Forms.ComboBox();
+            this.cmbCopyLink = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picSpinner)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,11 +108,65 @@
             this.cmbImgs.TabIndex = 1;
             this.cmbImgs.SelectedIndexChanged += new System.EventHandler(this.cmbImgs_SelectedIndexChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 210);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "After uploading open:";
+            // 
+            // cmbOpenLink
+            // 
+            this.cmbOpenLink.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbOpenLink.FormattingEnabled = true;
+            this.cmbOpenLink.Items.AddRange(new object[] {
+            "Nothing",
+            "Image",
+            "Image with embed codes"});
+            this.cmbOpenLink.Location = new System.Drawing.Point(126, 207);
+            this.cmbOpenLink.Name = "cmbOpenLink";
+            this.cmbOpenLink.Size = new System.Drawing.Size(226, 21);
+            this.cmbOpenLink.TabIndex = 6;
+            this.cmbOpenLink.SelectedIndexChanged += new System.EventHandler(this.cmbOpenLink_SelectedIndexChanged);
+            // 
+            // cmbCopyLink
+            // 
+            this.cmbCopyLink.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCopyLink.FormattingEnabled = true;
+            this.cmbCopyLink.Items.AddRange(new object[] {
+            "Nothing",
+            "Imgur link",
+            "Direct link",
+            "Markdown",
+            "HTML",
+            "BBCode",
+            "Linked BBCode"});
+            this.cmbCopyLink.Location = new System.Drawing.Point(126, 234);
+            this.cmbCopyLink.Name = "cmbCopyLink";
+            this.cmbCopyLink.Size = new System.Drawing.Size(226, 21);
+            this.cmbCopyLink.TabIndex = 8;
+            this.cmbCopyLink.SelectedIndexChanged += new System.EventHandler(this.cmbCopyLink_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 237);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Copy into clipboard:";
+            // 
             // Upload
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 191);
+            this.ClientSize = new System.Drawing.Size(363, 270);
+            this.Controls.Add(this.cmbCopyLink);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbOpenLink);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbImgs);
             this.Controls.Add(this.picSpinner);
             this.Controls.Add(this.bttUpload);
@@ -135,5 +193,9 @@
         private System.Windows.Forms.Button bttUpload;
         private System.Windows.Forms.PictureBox picSpinner;
         private System.Windows.Forms.ComboBox cmbImgs;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbOpenLink;
+        private System.Windows.Forms.ComboBox cmbCopyLink;
+        private System.Windows.Forms.Label label2;
     }
 }

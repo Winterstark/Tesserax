@@ -15,10 +15,99 @@ namespace Tesserax
     public partial class Upload : Form
     {
         public Action<string[]> returnLinks;
+        public bool uploadToReddit, openingConfig;
 
         BackgroundWorker uploader;
         string[] imgPaths, titles, descs;
-        public bool uploadToReddit;
+        string openLinkPreference, copyLinkPreference, albumOpenLinkPreference, albumCopyLinkPreference;
+
+
+        void saveUploadConfig()
+        {
+            if (openLinkPreference == "")
+                openLinkPreference = "Image";
+            if (copyLinkPreference == "")
+                copyLinkPreference = "Nothing";
+            if (albumOpenLinkPreference == "")
+                albumOpenLinkPreference = "Album";
+            if (albumCopyLinkPreference == "")
+                albumCopyLinkPreference = "Nothing";
+
+            StreamWriter file = new StreamWriter(Application.StartupPath + "\\uploadConfig.txt");
+            file.WriteLine(openLinkPreference);
+            file.WriteLine(copyLinkPreference);
+            file.WriteLine(albumOpenLinkPreference);
+            file.WriteLine(albumCopyLinkPreference);
+            file.Close();
+        }
+
+        void openUploadConfig()
+        {
+            string filePath = Application.StartupPath + "\\uploadConfig.txt";
+
+            if (File.Exists(filePath))
+            {
+                StreamReader file = new StreamReader(filePath);
+                openLinkPreference = file.ReadLine();
+                copyLinkPreference = file.ReadLine();
+                albumOpenLinkPreference = file.ReadLine();
+                albumCopyLinkPreference = file.ReadLine();
+                file.Close();
+            }
+            else
+            {
+                //set default values
+                openLinkPreference = "Image";
+                copyLinkPreference = "Nothing";
+                albumOpenLinkPreference = "Album";
+                albumCopyLinkPreference = "Nothing";
+            }
+
+            openingConfig = true;
+            if (imgPaths.Length == 1)
+            {
+                cmbOpenLink.Text = openLinkPreference;
+                cmbCopyLink.Text = copyLinkPreference;
+            }
+            else
+            {
+                cmbOpenLink.Text = albumOpenLinkPreference;
+                cmbCopyLink.Text = albumCopyLinkPreference;
+            }
+            openingConfig = false;
+        }
+
+        string copyLink(string link, string directImgLink)
+        {
+            switch (cmbCopyLink.Text)
+            {
+                case "Imgur link":
+                    return link;
+                case "Direct link":
+                    return directImgLink;
+                case "Markdown":
+                    return String.Format("[{0}]({1})", txtTitle.Text, directImgLink);
+                case "HTML":
+                    return String.Format("<a href=\"{0}\"><img src=\"{1}\" title=\"source: imgur.com\" /></a>", link, directImgLink);
+                case "BBCode":
+                    return String.Format("[img]{0}[/img]", directImgLink);
+                case "Linked BBCode":
+                    return String.Format("[url={0}][img]{1}[/img][/url]", link, directImgLink);
+                case "Nothing":
+                default:
+                    return "";
+            }
+        }
+
+        string getImgurLink(string directLink)
+        {
+            string link = directLink.Replace("//i.", "//");
+            
+            if (link.Contains('.'))
+                link = link.Substring(0, link.LastIndexOf('.'));
+
+            return link;
+        }
 
         
         public Upload()
@@ -58,6 +147,28 @@ namespace Tesserax
             uploader.DoWork += new DoWorkEventHandler(uploader_DoWork);
             uploader.RunWorkerCompleted += new RunWorkerCompletedEventHandler(uploader_RunWorkerCompleted);
 
+            //set post-upload actions
+            openUploadConfig();
+
+            if (uploadToReddit)
+            {
+                openingConfig = true;
+                cmbOpenLink.Items.Clear();
+                cmbOpenLink.Items.Add("Reddit submission form");
+                cmbOpenLink.SelectedIndex = 0;
+                cmbOpenLink.Enabled = false;
+                openingConfig = false;
+            }
+            else if (n > 1)
+            {
+                openingConfig = true;
+                cmbOpenLink.Items.Clear();
+                cmbOpenLink.Items.Add("Nothing");
+                cmbOpenLink.Items.Add("Album");
+                cmbOpenLink.SelectedIndex = 1;
+
+                openingConfig = false;
+            }
         }
 
         private void cmbImgs_SelectedIndexChanged(object sender, EventArgs e)
@@ -128,21 +239,73 @@ namespace Tesserax
                 if (album != "")
                 {
                     if (!uploadToReddit)
-                        Process.Start(album);
+                    {
+                        if (cmbOpenLink.Text == "Album")
+                            Process.Start(album);
+                    }
                     else
                         Services.Reddit(album, Path.GetFileName(imgPaths[0]));
+
+                    //copy all links
+                    string clipboard = "";
+                    foreach (string directLink in links)
+                        clipboard += copyLink(getImgurLink(directLink), directLink) + Environment.NewLine;
+
+                    Clipboard.SetText(clipboard);
                 }
                 else
                 {
+                    string link = getImgurLink(links[0]);
+
                     if (!uploadToReddit)
-                        Process.Start(links[0]);
+                    {
+                        //open link
+                        switch (cmbOpenLink.Text)
+                        {
+                            case "Nothing":
+                                break;
+                            case "Image":
+                                Process.Start(links[0]);
+                                break;
+                            case "Image with embed codes":
+                                Process.Start(link + "?tags");
+                                break;
+                        }    
+                    }
                     else
                         Services.Reddit(links[0], Path.GetFileName(imgPaths[0]));
+
+                    Clipboard.SetText(copyLink(link, links[0]));
                 }
 
                 returnLinks(links);
-
                 this.Close();
+            }
+        }
+
+        private void cmbOpenLink_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!openingConfig)
+            {
+                if (imgPaths.Length == 1)
+                    openLinkPreference = cmbOpenLink.Text;
+                else
+                    albumOpenLinkPreference = cmbOpenLink.Text;
+
+                saveUploadConfig();
+            }
+        }
+
+        private void cmbCopyLink_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!openingConfig && !uploadToReddit)
+            {
+                if (imgPaths.Length == 1)
+                    copyLinkPreference = cmbCopyLink.Text;
+                else
+                    albumCopyLinkPreference = cmbCopyLink.Text;
+
+                saveUploadConfig();
             }
         }
     }

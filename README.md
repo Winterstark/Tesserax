@@ -10,6 +10,8 @@ Tesserax is an image viewer for Windows, designed as an improved version of Goog
 
 ![Screenshot: Tesserax](http://i.imgur.com/nZMBBBH.png)
 
+IMPORTANT NOTICE: Github recently changed the URLs of some files, which caused the automatic updater to break. If Tesserax keeps informing you that the update check failed, you should install the newest version manually, which has this issue fixed.
+
 
 Installation
 --------------

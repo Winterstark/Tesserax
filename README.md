@@ -78,9 +78,9 @@ The buttons on the left side are, from bottom to top:
 * Search Karma Decay (Reddit) with image
 * Post image to Reddit
 
-![Screenshot: upload form](http://i.imgur.com/q5mCU6R.png)
+![Screenshot: upload form](http://i.imgur.com/jmlExNV.png)
 
-Note that these buttons perform their operations on the currently viewed image *or*, if there are any starred images, on *all* of them instead. This makes it easy to upload an album of several images at once.
+Note that these buttons perform their operations on the currently viewed image *or*, if there are any starred images, on *all* of them instead. This makes it easy to upload an album of several images at once, after which Tesserax will copy a list of links into the clipboard. The user can choose the format of these links (e.g. direct image link, HTML, Markdown, BBCode) so they can be ready to paste into a forum post, for example.
  
 ### Starring Images
 

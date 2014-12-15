@@ -21,8 +21,8 @@ namespace Tesserax
 {
     public partial class Main : Form
     {
-        const double VERSION = 1.0;
-        const string UPDATE_URL = "https://raw2.github.com/Winterstark/Tesserax/master/update/update.txt";
+        const double VERSION = 1.01;
+        const string UPDATE_URL = "https://raw.githubusercontent.com/Winterstark/Tesserax/master/update/update.txt";
 
         //enums
         enum Align { Center, Relative, HoldPosition, Custom }
@@ -1687,6 +1687,7 @@ namespace Tesserax
             {
                 aboutTesserax = new formAbout();
                 aboutTesserax.DefaultUpdateURL = UPDATE_URL;
+                aboutTesserax.lblVersion.Text = "v" + VERSION.ToString().Replace(',', '.');
                 aboutTesserax.Show();
             }
         }

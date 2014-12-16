@@ -14,6 +14,7 @@ namespace Tesserax
 {
     public partial class formAbout : Form
     {
+        public double CurrentVersion;
         public string DefaultUpdateURL = "";
 
         UpdateConfig updateConfig;
@@ -83,6 +84,7 @@ namespace Tesserax
             if (updateConfig == null || updateConfig.IsDisposed)
             {
                 updateConfig = new UpdateConfig();
+                updateConfig.CurrentVersion = CurrentVersion;
                 updateConfig.DefaultUpdateURL = DefaultUpdateURL;
                 updateConfig.Show();
             }

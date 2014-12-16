@@ -1686,6 +1686,7 @@ namespace Tesserax
             if (aboutTesserax == null || aboutTesserax.IsDisposed)
             {
                 aboutTesserax = new formAbout();
+                aboutTesserax.CurrentVersion = VERSION;
                 aboutTesserax.DefaultUpdateURL = UPDATE_URL;
                 aboutTesserax.lblVersion.Text = "v" + VERSION.ToString().Replace(',', '.');
                 aboutTesserax.Show();
